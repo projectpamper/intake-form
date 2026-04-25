@@ -351,16 +351,27 @@
     box-shadow: 0 2px 8px rgba(192,97,78,0.35);
   }
 
+  .body-map-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
   .body-map-wrap {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 16px;
     width: 100%;
   }
 
   .body-svg-interactive {
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -369,6 +380,8 @@
   .body-svg-interactive svg {
     width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
     overflow: visible;
   }
 
@@ -376,6 +389,8 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
   }
 
   .zone-summary > div, .zone-summary > p {
