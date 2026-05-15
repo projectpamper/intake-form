@@ -1808,13 +1808,33 @@
     btn.textContent = 'Sending…';
     saveClient(data);
 
-    try {
-      await emailjs.send(
-        CONFIG.emailjs.serviceId,
-        CONFIG.emailjs.templateId,
-        data
-      );
-      showSuccess();
+    try {var INTAKE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzwvP3vuYYvk443eHiYGP7L2gtbpzwe3llZ4Wet9KTmr7_bWPXaZUtsE__Zn0dJlRdx/exec';
+
+await fetch(INTAKE_SCRIPT_URL, {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    submitted_at:  new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' }),
+    client_name:   data.name,
+    client_phone:  data.phone,
+    client_email:  data.email,
+    visit_date:    data.visitDate,
+    treatment:     data.treatment,
+    duration:      data.duration,
+    pressure:      data.pressure,
+    focus_areas:   data.focusAreas,
+    avoid_areas:   data.avoidAreas,
+    scent:         data.scent,
+    drink:         data.drink,
+    medical:       data.medical,
+    injuries:      data.injuries,
+    allergies:     data.allergies,
+    notes:         data.notes
+  })
+});
+showSuccess();
+      
     } catch(e) {
       btn.disabled = false;
       btn.textContent = 'Submit & Notify Therapist';
