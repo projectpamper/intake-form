@@ -1846,8 +1846,9 @@ showSuccess();
   function showSuccess() {
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('successScreen').classList.add('visible');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
   function resetForm() {
     document.getElementById('formContent').style.display = 'block';
