@@ -940,494 +940,29 @@
 
           <!-- Human silhouette body map: Front + Back -->
           <div class="body-svg-interactive" id="bodySvg">
-            <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;">
-              <defs>
-                <style>
-                  .sk{fill:#ecddd2;stroke:#c8b0a0;stroke-width:0.65;stroke-linejoin:round;stroke-linecap:round;}
-                  .hr{fill:#c8a888;stroke:#b09070;stroke-width:0.5;stroke-linejoin:round;}
-                  .dt{fill:none;stroke:#c4a898;stroke-width:0.38;pointer-events:none;stroke-linecap:round;}
-                  .bzone{cursor:pointer;}
-                  .bzone .hit{fill:transparent;stroke:none;}
-                  .bzone:hover .hit{fill:rgba(150,120,100,0.09);}
-                  .ring{fill:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:3.5 2.8;opacity:0;transition:opacity 0.22s;}
-                  .rf{stroke:#6b9448;}
-                  .ra{stroke:#c04838;}
-                  .bzone.sf .rf{opacity:1;}
-                  .bzone.sa .ra{opacity:1;}
-                  .bzl{font-size:3.6px;font-family:"Open Sans",sans-serif;fill:#7a5c48;pointer-events:none;opacity:0;transition:opacity 0.15s;text-anchor:middle;}
-                  .bzone:hover .bzl,.bzone.sf .bzl,.bzone.sa .bzl{opacity:1;}
-                  .vl{font-size:4.8px;font-family:"League Spartan",sans-serif;font-weight:700;fill:#c0a898;letter-spacing:0.07em;text-anchor:middle;}
-                </style>
-              </defs>
-
-              <text class="vl" x="63" y="8.5">FRONT</text>
-
-              <!-- ── FRONT silhouette ── -->
-              
-  <!-- HEAD: slightly oval, wider at cheeks -->
-  <ellipse class="sk" cx="63" cy="19.5" rx="10" ry="11.5"/>
-  <!-- hair: flowing shape sitting on top and sides -->
-  <path class="hr" d="M53 16 C51 8 54 2 63 1.5 C72 2 75 8 73 16 C71 12 68 10.5 63 10.5 C58 10.5 55 12 53 16Z"/>
-  <!-- neck: tapers gracefully -->
-  <path class="sk" d="M59.5 29.5 C59 32 59 36.5 60.5 39.5 Q63 41.5 65.5 39.5 C67 36.5 67 32 66.5 29.5 Q63 28 59.5 29.5Z"/>
-  <!-- shoulders sweep out naturally, torso narrows at waist, flares at hips -->
-  <path class="sk" d="
-    M37.5 40.5
-    C32 42 26 48 24 55.5
-    C22 62 25.5 67 30 68
-    C31.5 68.5 33.5 69 34.5 69.5
-    C34 72 33.5 76 33.5 80
-    C33 85 33.5 90 35 95
-    C36.5 100 38 104 40 107
-    C42 110 44 112 46 113.5
-    L80 113.5
-    C82 112 84 110 86 107
-    C88 104 89.5 100 91 95
-    C92.5 90 93 85 92.5 80
-    C92.5 76 92 72 91.5 69.5
-    C92.5 69 94.5 68.5 96 68
-    C100.5 67 104 62 102 55.5
-    C100 48 94 42 88.5 40.5
-    C82 38 74 37 63 37
-    C52 37 44 38 37.5 40.5Z
-  "/>
-  <!-- left arm: natural taper — wider at shoulder, narrows past elbow -->
-  <path class="sk" d="
-    M30.5 67
-    C25.5 68.5 20.5 75 20 83
-    C19.5 89.5 22.5 94 27 95
-    C31.5 96 35 92 36 86
-    C37 80 36 70 30.5 67Z
-  "/>
-  <ellipse class="sk" cx="25.5" cy="97.5" rx="4.5" ry="4"/>
-  <path class="sk" d="
-    M21 101.5
-    C17.5 109 17.5 119.5 20.5 124.5
-    C22.5 127.5 27.5 128.5 31.5 126.5
-    C34.5 124.5 35.5 119.5 34.5 113.5
-    C33.5 107.5 31.5 102 21 101.5Z
-  "/>
-  <path class="sk" d="M20.5 125.5 C18 131 19.5 137.5 23 140 C26 142 32.5 141 35.5 137.5 C38 134.5 37.5 128 35.5 125.5Z"/>
-  <!-- right arm -->
-  <path class="sk" d="
-    M95.5 67
-    C100.5 68.5 105.5 75 106 83
-    C106.5 89.5 103.5 94 99 95
-    C94.5 96 91 92 90 86
-    C89 80 90 70 95.5 67Z
-  "/>
-  <ellipse class="sk" cx="100.5" cy="97.5" rx="4.5" ry="4"/>
-  <path class="sk" d="
-    M105 101.5
-    C108.5 109 108.5 119.5 105.5 124.5
-    C103.5 127.5 98.5 128.5 94.5 126.5
-    C91.5 124.5 90.5 119.5 91.5 113.5
-    C92.5 107.5 94.5 102 105 101.5Z
-  "/>
-  <path class="sk" d="M105.5 125.5 C108 131 106.5 137.5 103 140 C100 142 93.5 141 90.5 137.5 C88 134.5 88.5 128 90.5 125.5Z"/>
-  <!-- left leg: thigh curves naturally, diamond calf, taper ankle -->
-  <path class="sk" d="
-    M46 113.5
-    C47 116 53 118 56.5 116
-    C57.5 126 56.5 141 54.5 151
-    C52.5 155.5 46.5 156.5 44 152
-    C41 142 41 124 46 113.5Z
-  "/>
-  <ellipse class="sk" cx="49" cy="154.5" rx="6" ry="5"/>
-  <path class="sk" d="
-    M43 158.5
-    C39.5 165.5 39.5 179 43 186
-    C45 190 52 191 55 186
-    C57.5 179 56.5 165.5 53.5 158.5
-    C51.5 156 45 156 43 158.5Z
-  "/>
-  <path class="sk" d="M44 188.5 C42 191.5 42 197 44.5 199.5 C47 202 53 202 55.5 199.5 C57.5 197 57.5 191.5 55.5 188.5 C53.5 186.5 46 186.5 44 188.5Z"/>
-  <path class="sk" d="M44 200.5 C41.5 204 40.5 210 43.5 213 C46 216 52.5 217 57.5 215 C62 213 63 208.5 61 204.5 C59 201.5 56 200.5 44 200.5Z"/>
-  <!-- right leg -->
-  <path class="sk" d="
-    M80 113.5
-    C79 116 73 118 69.5 116
-    C68.5 126 69.5 141 71.5 151
-    C73.5 155.5 79.5 156.5 82 152
-    C85 142 85 124 80 113.5Z
-  "/>
-  <ellipse class="sk" cx="77" cy="154.5" rx="6" ry="5"/>
-  <path class="sk" d="
-    M83 158.5
-    C86.5 165.5 86.5 179 83 186
-    C81 190 74 191 71 186
-    C68.5 179 69.5 165.5 72.5 158.5
-    C74.5 156 81 156 83 158.5Z
-  "/>
-  <path class="sk" d="M82 188.5 C84 191.5 84 197 81.5 199.5 C79 202 73 202 70.5 199.5 C68.5 197 68.5 191.5 70.5 188.5 C72.5 186.5 80 186.5 82 188.5Z"/>
-  <path class="sk" d="M82 200.5 C84.5 204 85.5 210 82.5 213 C80 216 73.5 217 68.5 215 C64 213 63 208.5 65 204.5 C67 201.5 70 200.5 82 200.5Z"/>
-
-
-              <!-- front detail lines -->
-              <g class="dt">
-                <path d="M55 46 Q63 44 71 46"/> <!-- clavicle -->
-                <path d="M50 57 C54 62 57 65 63 65 C69 65 72 62 76 57"/> <!-- bust -->
-                <circle cx="63" cy="87" r="1" stroke-width="0.45"/> <!-- navel -->
-              </g>
-
-              <!-- ── FRONT hit zones + rings ── -->
-              <g class="bzone" id="zone-head" data-zone="Head" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="63" cy="18" rx="13" ry="15"/>
-                <ellipse class="ring rf" cx="63" cy="18" rx="12" ry="14"/>
-                <ellipse class="ring ra" cx="63" cy="18" rx="12" ry="14"/>
-                <text class="bzl" x="63" y="13">Head</text>
-              </g>
-              <g class="bzone" id="zone-neck" data-zone="Neck" onclick="toggleZone(this)">
-                <path class="hit" d="M57 28 Q57 42 63 43 Q69 42 69 28 Q63 26 57 28Z"/>
-                <ellipse class="ring rf" cx="63" cy="34" rx="6" ry="6"/>
-                <ellipse class="ring ra" cx="63" cy="34" rx="6" ry="6"/>
-                <text class="bzl" x="63" y="37">Neck</text>
-              </g>
-              <g class="bzone" id="zone-l-shoulder" data-zone="Left Shoulder" onclick="toggleZone(this)">
-                <path class="hit" d="M37.5 40.5 C32 42 26 48 24 55.5 C22 62 25.5 67 30 68 L35 69.5 L38.5 40.5Z"/>
-                <ellipse class="ring rf" cx="29" cy="54" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="29" cy="54" rx="7" ry="9"/>
-                <text class="bzl" x="28" y="54">L.Shldr</text>
-              </g>
-              <g class="bzone" id="zone-r-shoulder" data-zone="Right Shoulder" onclick="toggleZone(this)">
-                <path class="hit" d="M88.5 40.5 C94 42 100 48 102 55.5 C104 62 100.5 67 96 68 L91 69.5 L87.5 40.5Z"/>
-                <ellipse class="ring rf" cx="97" cy="54" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="97" cy="54" rx="7" ry="9"/>
-                <text class="bzl" x="98" y="54">R.Shldr</text>
-              </g>
-              <g class="bzone" id="zone-chest" data-zone="Upper Chest" onclick="toggleZone(this)">
-                <path class="hit" d="M37.5 40.5 L88.5 40.5 L92 70 L34 70Z"/>
-                <ellipse class="ring rf" cx="63" cy="55" rx="17" ry="10"/>
-                <ellipse class="ring ra" cx="63" cy="55" rx="17" ry="10"/>
-                <text class="bzl" x="63" y="55">Chest</text>
-              </g>
-              <g class="bzone" id="zone-abdomen" data-zone="Abdomen" onclick="toggleZone(this)">
-                <path class="hit" d="M34 70 L92 70 L91.5 100 L34.5 100Z"/>
-                <ellipse class="ring rf" cx="63" cy="84" rx="16" ry="11"/>
-                <ellipse class="ring ra" cx="63" cy="84" rx="16" ry="11"/>
-                <text class="bzl" x="63" y="84">Abdomen</text>
-              </g>
-              <g class="bzone" id="zone-hips" data-zone="Hips" onclick="toggleZone(this)">
-                <path class="hit" d="M34.5 100 C38 108 42 112 46 113.5 L80 113.5 C84 112 88 108 91.5 100Z"/>
-                <ellipse class="ring rf" cx="63" cy="108" rx="18" ry="8"/>
-                <ellipse class="ring ra" cx="63" cy="108" rx="18" ry="8"/>
-                <text class="bzl" x="63" y="108">Hips</text>
-              </g>
-              <g class="bzone" id="zone-l-upper-arm" data-zone="Left Upper Arm" onclick="toggleZone(this)">
-                <path class="hit" d="M30.5 67 C25.5 68.5 20.5 75 20 83 C19.5 89.5 22.5 94 27 95 C31.5 96 35 92 36 86 C37 80 36 70 30.5 67Z"/>
-                <ellipse class="ring rf" cx="28" cy="81" rx="6" ry="11"/>
-                <ellipse class="ring ra" cx="28" cy="81" rx="6" ry="11"/>
-                <text class="bzl" x="27" y="81">L.Arm</text>
-              </g>
-              <g class="bzone" id="zone-r-upper-arm" data-zone="Right Upper Arm" onclick="toggleZone(this)">
-                <path class="hit" d="M95.5 67 C100.5 68.5 105.5 75 106 83 C106.5 89.5 103.5 94 99 95 C94.5 96 91 92 90 86 C89 80 90 70 95.5 67Z"/>
-                <ellipse class="ring rf" cx="98" cy="81" rx="6" ry="11"/>
-                <ellipse class="ring ra" cx="98" cy="81" rx="6" ry="11"/>
-                <text class="bzl" x="99" y="81">R.Arm</text>
-              </g>
-              <g class="bzone" id="zone-l-elbow" data-zone="Left Elbow" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="25.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring rf" cx="25.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="25.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="25.5" y="98.5">L.Elbow</text>
-              </g>
-              <g class="bzone" id="zone-r-elbow" data-zone="Right Elbow" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="100.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring rf" cx="100.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="100.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="100.5" y="98.5">R.Elbow</text>
-              </g>
-              <g class="bzone" id="zone-l-forearm" data-zone="Left Forearm" onclick="toggleZone(this)">
-                <path class="hit" d="M21 101.5 C17.5 109 17.5 119.5 20.5 124.5 C22.5 127.5 27.5 128.5 31.5 126.5 C34.5 124.5 35.5 119.5 34.5 113.5 C33.5 107.5 31.5 102 21 101.5Z"/>
-                <ellipse class="ring rf" cx="27" cy="114" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="27" cy="114" rx="7" ry="9"/>
-                <text class="bzl" x="27" y="114">L.Forearm</text>
-              </g>
-              <g class="bzone" id="zone-r-forearm" data-zone="Right Forearm" onclick="toggleZone(this)">
-                <path class="hit" d="M105 101.5 C108.5 109 108.5 119.5 105.5 124.5 C103.5 127.5 98.5 128.5 94.5 126.5 C91.5 124.5 90.5 119.5 91.5 113.5 C92.5 107.5 94.5 102 105 101.5Z"/>
-                <ellipse class="ring rf" cx="99" cy="114" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="99" cy="114" rx="7" ry="9"/>
-                <text class="bzl" x="99" y="114">R.Forearm</text>
-              </g>
-              <g class="bzone" id="zone-l-hand" data-zone="Left Wrist &amp; Hand" onclick="toggleZone(this)">
-                <path class="hit" d="M20.5 125.5 C18 131 19.5 137.5 23 140 C26 142 32.5 141 35.5 137.5 C38 134.5 37.5 128 35.5 125.5Z"/>
-                <ellipse class="ring rf" cx="28" cy="133" rx="7.5" ry="6"/>
-                <ellipse class="ring ra" cx="28" cy="133" rx="7.5" ry="6"/>
-                <text class="bzl" x="28" y="133">L.Hand</text>
-              </g>
-              <g class="bzone" id="zone-r-hand" data-zone="Right Wrist &amp; Hand" onclick="toggleZone(this)">
-                <path class="hit" d="M105.5 125.5 C108 131 106.5 137.5 103 140 C100 142 93.5 141 90.5 137.5 C88 134.5 88.5 128 90.5 125.5Z"/>
-                <ellipse class="ring rf" cx="98" cy="133" rx="7.5" ry="6"/>
-                <ellipse class="ring ra" cx="98" cy="133" rx="7.5" ry="6"/>
-                <text class="bzl" x="98" y="133">R.Hand</text>
-              </g>
-              <g class="bzone" id="zone-l-thigh" data-zone="Left Thigh" onclick="toggleZone(this)">
-                <path class="hit" d="M46 113.5 C47 116 53 118 56.5 116 C57.5 126 56.5 141 54.5 151 C52.5 155.5 46.5 156.5 44 152 C41 142 41 124 46 113.5Z"/>
-                <ellipse class="ring rf" cx="49" cy="133" rx="7" ry="15"/>
-                <ellipse class="ring ra" cx="49" cy="133" rx="7" ry="15"/>
-                <text class="bzl" x="49" y="133">L.Thigh</text>
-              </g>
-              <g class="bzone" id="zone-r-thigh" data-zone="Right Thigh" onclick="toggleZone(this)">
-                <path class="hit" d="M80 113.5 C79 116 73 118 69.5 116 C68.5 126 69.5 141 71.5 151 C73.5 155.5 79.5 156.5 82 152 C85 142 85 124 80 113.5Z"/>
-                <ellipse class="ring rf" cx="77" cy="133" rx="7" ry="15"/>
-                <ellipse class="ring ra" cx="77" cy="133" rx="7" ry="15"/>
-                <text class="bzl" x="77" y="133">R.Thigh</text>
-              </g>
-              <g class="bzone" id="zone-l-knee" data-zone="Left Knee" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="49" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring rf" cx="49" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring ra" cx="49" cy="154.5" rx="7" ry="5.5"/>
-                <text class="bzl" x="49" y="155.5">L.Knee</text>
-              </g>
-              <g class="bzone" id="zone-r-knee" data-zone="Right Knee" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="77" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring rf" cx="77" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring ra" cx="77" cy="154.5" rx="7" ry="5.5"/>
-                <text class="bzl" x="77" y="155.5">R.Knee</text>
-              </g>
-              <g class="bzone" id="zone-l-calf" data-zone="Left Calf" onclick="toggleZone(this)">
-                <path class="hit" d="M43 158.5 C39.5 165.5 39.5 179 43 186 C45 190 52 191 55 186 C57.5 179 56.5 165.5 53.5 158.5 C51.5 156 45 156 43 158.5Z"/>
-                <ellipse class="ring rf" cx="49" cy="173" rx="7" ry="11"/>
-                <ellipse class="ring ra" cx="49" cy="173" rx="7" ry="11"/>
-                <text class="bzl" x="49" y="173">L.Calf</text>
-              </g>
-              <g class="bzone" id="zone-r-calf" data-zone="Right Calf" onclick="toggleZone(this)">
-                <path class="hit" d="M83 158.5 C86.5 165.5 86.5 179 83 186 C81 190 74 191 71 186 C68.5 179 69.5 165.5 72.5 158.5 C74.5 156 81 156 83 158.5Z"/>
-                <ellipse class="ring rf" cx="77" cy="173" rx="7" ry="11"/>
-                <ellipse class="ring ra" cx="77" cy="173" rx="7" ry="11"/>
-                <text class="bzl" x="77" y="173">R.Calf</text>
-              </g>
-              <g class="bzone" id="zone-l-ankle" data-zone="Left Ankle" onclick="toggleZone(this)">
-                <path class="hit" d="M44 188.5 C42 191.5 42 197 44.5 199.5 C47 202 53 202 55.5 199.5 C57.5 197 57.5 191.5 55.5 188.5 C53.5 186.5 46 186.5 44 188.5Z"/>
-                <ellipse class="ring rf" cx="49.5" cy="194" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="49.5" cy="194" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="49.5" y="194">L.Ankle</text>
-              </g>
-              <g class="bzone" id="zone-r-ankle" data-zone="Right Ankle" onclick="toggleZone(this)">
-                <path class="hit" d="M82 188.5 C84 191.5 84 197 81.5 199.5 C79 202 73 202 70.5 199.5 C68.5 197 68.5 191.5 70.5 188.5 C72.5 186.5 80 186.5 82 188.5Z"/>
-                <ellipse class="ring rf" cx="76.5" cy="194" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="76.5" cy="194" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="76.5" y="194">R.Ankle</text>
-              </g>
-              <g class="bzone" id="zone-l-foot" data-zone="Left Foot" onclick="toggleZone(this)">
-                <path class="hit" d="M44 200.5 C41.5 204 40.5 210 43.5 213 C46 216 52.5 217 57.5 215 C62 213 63 208.5 61 204.5 C59 201.5 56 200.5 44 200.5Z"/>
-                <ellipse class="ring rf" cx="51.5" cy="208" rx="10" ry="5.5"/>
-                <ellipse class="ring ra" cx="51.5" cy="208" rx="10" ry="5.5"/>
-                <text class="bzl" x="51.5" y="208">L.Foot</text>
-              </g>
-              <g class="bzone" id="zone-r-foot" data-zone="Right Foot" onclick="toggleZone(this)">
-                <path class="hit" d="M82 200.5 C84.5 204 85.5 210 82.5 213 C80 216 73.5 217 68.5 215 C64 213 63 208.5 65 204.5 C67 201.5 70 200.5 82 200.5Z"/>
-                <ellipse class="ring rf" cx="74.5" cy="208" rx="10" ry="5.5"/>
-                <ellipse class="ring ra" cx="74.5" cy="208" rx="10" ry="5.5"/>
-                <text class="bzl" x="74.5" y="208">R.Foot</text>
-              </g>
-
-              <!-- divider -->
-              <line x1="128" y1="4" x2="128" y2="218" stroke="#e8ddd0" stroke-width="0.8"/>
-              <text class="vl" x="193" y="8.5">BACK</text>
-
-              <!-- ── BACK silhouette ── -->
-              
-  <!-- head back -->
-  <ellipse class="sk" cx="193" cy="19.5" rx="10" ry="11.5"/>
-  <path class="hr" d="M183 16 C181 8 184 2 193 1.5 C202 2 205 8 203 16 C201 12 198 10.5 193 10.5 C188 10.5 185 12 183 16Z"/>
-  <!-- neck -->
-  <path class="sk" d="M189.5 29.5 C189 32 189 36.5 190.5 39.5 Q193 41.5 195.5 39.5 C197 36.5 197 32 196.5 29.5 Q193 28 189.5 29.5Z"/>
-  <!-- back torso -->
-  <path class="sk" d="
-    M167.5 40.5
-    C162 42 156 48 154 55.5
-    C152 62 155.5 67 160 68
-    C161.5 68.5 163.5 69 164.5 69.5
-    C164 72 163.5 76 163.5 80
-    C163 85 163.5 90 165 95
-    C166.5 100 168 104 170 107
-    C172 110 174 112 176 113.5
-    L210 113.5
-    C212 112 214 110 216 107
-    C218 104 219.5 100 221 95
-    C222.5 90 223 85 222.5 80
-    C222.5 76 222 72 221.5 69.5
-    C222.5 69 224.5 68.5 226 68
-    C230.5 67 234 62 232 55.5
-    C230 48 224 42 218.5 40.5
-    C212 38 204 37 193 37
-    C182 37 174 38 167.5 40.5Z
-  "/>
-  <!-- left arm back -->
-  <path class="sk" d="M160.5 67 C155.5 68.5 150.5 75 150 83 C149.5 89.5 152.5 94 157 95 C161.5 96 165 92 166 86 C167 80 166 70 160.5 67Z"/>
-  <ellipse class="sk" cx="155.5" cy="97.5" rx="4.5" ry="4"/>
-  <path class="sk" d="M151 101.5 C147.5 109 147.5 119.5 150.5 124.5 C152.5 127.5 157.5 128.5 161.5 126.5 C164.5 124.5 165.5 119.5 164.5 113.5 C163.5 107.5 161.5 102 151 101.5Z"/>
-  <path class="sk" d="M150.5 125.5 C148 131 149.5 137.5 153 140 C156 142 162.5 141 165.5 137.5 C168 134.5 167.5 128 165.5 125.5Z"/>
-  <!-- right arm back -->
-  <path class="sk" d="M225.5 67 C230.5 68.5 235.5 75 236 83 C236.5 89.5 233.5 94 229 95 C224.5 96 221 92 220 86 C219 80 220 70 225.5 67Z"/>
-  <ellipse class="sk" cx="230.5" cy="97.5" rx="4.5" ry="4"/>
-  <path class="sk" d="M235 101.5 C238.5 109 238.5 119.5 235.5 124.5 C233.5 127.5 228.5 128.5 224.5 126.5 C221.5 124.5 220.5 119.5 221.5 113.5 C222.5 107.5 224.5 102 235 101.5Z"/>
-  <path class="sk" d="M235.5 125.5 C238 131 236.5 137.5 233 140 C230 142 223.5 141 220.5 137.5 C218 134.5 218.5 128 220.5 125.5Z"/>
-  <!-- left leg back -->
-  <path class="sk" d="M176 113.5 C177 116 183 118 186.5 116 C187.5 126 186.5 141 184.5 151 C182.5 155.5 176.5 156.5 174 152 C171 142 171 124 176 113.5Z"/>
-  <ellipse class="sk" cx="179" cy="154.5" rx="6" ry="5"/>
-  <path class="sk" d="M173 158.5 C169.5 165.5 169.5 179 173 186 C175 190 182 191 185 186 C187.5 179 186.5 165.5 183.5 158.5 C181.5 156 175 156 173 158.5Z"/>
-  <path class="sk" d="M174 188.5 C172 191.5 172 197 174.5 199.5 C177 202 183 202 185.5 199.5 C187.5 197 187.5 191.5 185.5 188.5 C183.5 186.5 176 186.5 174 188.5Z"/>
-  <path class="sk" d="M174 200.5 C171.5 204 170.5 210 173.5 213 C176 216 182.5 217 187.5 215 C192 213 193 208.5 191 204.5 C189 201.5 186 200.5 174 200.5Z"/>
-  <!-- right leg back -->
-  <path class="sk" d="M210 113.5 C209 116 203 118 199.5 116 C198.5 126 199.5 141 201.5 151 C203.5 155.5 209.5 156.5 212 152 C215 142 215 124 210 113.5Z"/>
-  <ellipse class="sk" cx="207" cy="154.5" rx="6" ry="5"/>
-  <path class="sk" d="M213 158.5 C216.5 165.5 216.5 179 213 186 C211 190 204 191 201 186 C198.5 179 199.5 165.5 202.5 158.5 C204.5 156 211 156 213 158.5Z"/>
-  <path class="sk" d="M212 188.5 C214 191.5 214 197 211.5 199.5 C209 202 203 202 200.5 199.5 C198.5 197 198.5 191.5 200.5 188.5 C202.5 186.5 210 186.5 212 188.5Z"/>
-  <path class="sk" d="M212 200.5 C214.5 204 215.5 210 212.5 213 C210 216 203.5 217 198.5 215 C194 213 193 208.5 195 204.5 C197 201.5 200 200.5 212 200.5Z"/>
-
-
-              <!-- back detail lines -->
-              <g class="dt">
-                <path d="M193 43 L193 111"/> <!-- spine -->
-                <path d="M186 52 C185 56 185.5 61 186 65"/> <!-- left shoulder blade -->
-                <path d="M200 52 C201 56 200.5 61 200 65"/> <!-- right shoulder blade -->
-                <circle cx="190" cy="108" r="1.1" stroke-width="0.4"/>
-                <circle cx="196" cy="108" r="1.1" stroke-width="0.4"/>
-              </g>
-
-              <!-- ── BACK hit zones ── -->
-              <g class="bzone" id="zone-head-back" data-zone="Head (back)" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="193" cy="18" rx="13" ry="15"/>
-                <ellipse class="ring rf" cx="193" cy="18" rx="12" ry="14"/>
-                <ellipse class="ring ra" cx="193" cy="18" rx="12" ry="14"/>
-                <text class="bzl" x="193" y="13">Back of head</text>
-              </g>
-              <g class="bzone" id="zone-neck-back" data-zone="Neck (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M187 28 Q187 42 193 43 Q199 42 199 28 Q193 26 187 28Z"/>
-                <ellipse class="ring rf" cx="193" cy="34" rx="6" ry="6"/>
-                <ellipse class="ring ra" cx="193" cy="34" rx="6" ry="6"/>
-                <text class="bzl" x="193" y="37">Neck</text>
-              </g>
-              <g class="bzone" id="zone-l-shoulder-back" data-zone="Left Shoulder (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M167.5 40.5 C162 42 156 48 154 55.5 C152 62 155.5 67 160 68 L165 69.5 L168.5 40.5Z"/>
-                <ellipse class="ring rf" cx="159" cy="54" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="159" cy="54" rx="7" ry="9"/>
-                <text class="bzl" x="158" y="54">L.Shldr</text>
-              </g>
-              <g class="bzone" id="zone-r-shoulder-back" data-zone="Right Shoulder (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M218.5 40.5 C224 42 230 48 232 55.5 C234 62 230.5 67 226 68 L221 69.5 L217.5 40.5Z"/>
-                <ellipse class="ring rf" cx="227" cy="54" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="227" cy="54" rx="7" ry="9"/>
-                <text class="bzl" x="228" y="54">R.Shldr</text>
-              </g>
-              <g class="bzone" id="zone-upper-back" data-zone="Upper Back" onclick="toggleZone(this)">
-                <path class="hit" d="M167.5 40.5 L218.5 40.5 L222 70 L164 70Z"/>
-                <ellipse class="ring rf" cx="193" cy="55" rx="17" ry="10"/>
-                <ellipse class="ring ra" cx="193" cy="55" rx="17" ry="10"/>
-                <text class="bzl" x="193" y="55">Upper back</text>
-              </g>
-              <g class="bzone" id="zone-lower-back" data-zone="Lower Back" onclick="toggleZone(this)">
-                <path class="hit" d="M164 70 L222 70 L221.5 100 L164.5 100Z"/>
-                <ellipse class="ring rf" cx="193" cy="84" rx="16" ry="11"/>
-                <ellipse class="ring ra" cx="193" cy="84" rx="16" ry="11"/>
-                <text class="bzl" x="193" y="84">Lower back</text>
-              </g>
-              <g class="bzone" id="zone-glutes" data-zone="Glutes" onclick="toggleZone(this)">
-                <path class="hit" d="M164.5 100 C168 108 172 112 176 113.5 L210 113.5 C214 112 218 108 221.5 100Z"/>
-                <ellipse class="ring rf" cx="193" cy="108" rx="18" ry="8"/>
-                <ellipse class="ring ra" cx="193" cy="108" rx="18" ry="8"/>
-                <text class="bzl" x="193" y="108">Glutes</text>
-              </g>
-              <g class="bzone" id="zone-l-upper-arm-back" data-zone="Left Upper Arm (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M160.5 67 C155.5 68.5 150.5 75 150 83 C149.5 89.5 152.5 94 157 95 C161.5 96 165 92 166 86 C167 80 166 70 160.5 67Z"/>
-                <ellipse class="ring rf" cx="158" cy="81" rx="6" ry="11"/>
-                <ellipse class="ring ra" cx="158" cy="81" rx="6" ry="11"/>
-                <text class="bzl" x="157" y="81">L.Arm</text>
-              </g>
-              <g class="bzone" id="zone-r-upper-arm-back" data-zone="Right Upper Arm (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M225.5 67 C230.5 68.5 235.5 75 236 83 C236.5 89.5 233.5 94 229 95 C224.5 96 221 92 220 86 C219 80 220 70 225.5 67Z"/>
-                <ellipse class="ring rf" cx="228" cy="81" rx="6" ry="11"/>
-                <ellipse class="ring ra" cx="228" cy="81" rx="6" ry="11"/>
-                <text class="bzl" x="229" y="81">R.Arm</text>
-              </g>
-              <g class="bzone" id="zone-l-elbow-back" data-zone="Left Elbow (back)" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="155.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring rf" cx="155.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="155.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="155.5" y="98.5">L.Elbow</text>
-              </g>
-              <g class="bzone" id="zone-r-elbow-back" data-zone="Right Elbow (back)" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="230.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring rf" cx="230.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="230.5" cy="97.5" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="230.5" y="98.5">R.Elbow</text>
-              </g>
-              <g class="bzone" id="zone-l-forearm-back" data-zone="Left Forearm (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M151 101.5 C147.5 109 147.5 119.5 150.5 124.5 C152.5 127.5 157.5 128.5 161.5 126.5 C164.5 124.5 165.5 119.5 164.5 113.5 C163.5 107.5 161.5 102 151 101.5Z"/>
-                <ellipse class="ring rf" cx="157" cy="114" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="157" cy="114" rx="7" ry="9"/>
-                <text class="bzl" x="157" y="114">L.Forearm</text>
-              </g>
-              <g class="bzone" id="zone-r-forearm-back" data-zone="Right Forearm (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M235 101.5 C238.5 109 238.5 119.5 235.5 124.5 C233.5 127.5 228.5 128.5 224.5 126.5 C221.5 124.5 220.5 119.5 221.5 113.5 C222.5 107.5 224.5 102 235 101.5Z"/>
-                <ellipse class="ring rf" cx="229" cy="114" rx="7" ry="9"/>
-                <ellipse class="ring ra" cx="229" cy="114" rx="7" ry="9"/>
-                <text class="bzl" x="229" y="114">R.Forearm</text>
-              </g>
-              <g class="bzone" id="zone-l-hamstring" data-zone="Left Hamstring" onclick="toggleZone(this)">
-                <path class="hit" d="M176 113.5 C177 116 183 118 186.5 116 C187.5 126 186.5 141 184.5 151 C182.5 155.5 176.5 156.5 174 152 C171 142 171 124 176 113.5Z"/>
-                <ellipse class="ring rf" cx="179" cy="133" rx="7" ry="15"/>
-                <ellipse class="ring ra" cx="179" cy="133" rx="7" ry="15"/>
-                <text class="bzl" x="179" y="133">L.Hamstr.</text>
-              </g>
-              <g class="bzone" id="zone-r-hamstring" data-zone="Right Hamstring" onclick="toggleZone(this)">
-                <path class="hit" d="M210 113.5 C209 116 203 118 199.5 116 C198.5 126 199.5 141 201.5 151 C203.5 155.5 209.5 156.5 212 152 C215 142 215 124 210 113.5Z"/>
-                <ellipse class="ring rf" cx="207" cy="133" rx="7" ry="15"/>
-                <ellipse class="ring ra" cx="207" cy="133" rx="7" ry="15"/>
-                <text class="bzl" x="207" y="133">R.Hamstr.</text>
-              </g>
-              <g class="bzone" id="zone-l-knee-back" data-zone="Left Knee (back)" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="179" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring rf" cx="179" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring ra" cx="179" cy="154.5" rx="7" ry="5.5"/>
-                <text class="bzl" x="179" y="155.5">L.Knee</text>
-              </g>
-              <g class="bzone" id="zone-r-knee-back" data-zone="Right Knee (back)" onclick="toggleZone(this)">
-                <ellipse class="hit" cx="207" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring rf" cx="207" cy="154.5" rx="7" ry="5.5"/>
-                <ellipse class="ring ra" cx="207" cy="154.5" rx="7" ry="5.5"/>
-                <text class="bzl" x="207" y="155.5">R.Knee</text>
-              </g>
-              <g class="bzone" id="zone-l-calf-back" data-zone="Left Calf (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M173 158.5 C169.5 165.5 169.5 179 173 186 C175 190 182 191 185 186 C187.5 179 186.5 165.5 183.5 158.5 C181.5 156 175 156 173 158.5Z"/>
-                <ellipse class="ring rf" cx="179" cy="173" rx="7" ry="11"/>
-                <ellipse class="ring ra" cx="179" cy="173" rx="7" ry="11"/>
-                <text class="bzl" x="179" y="173">L.Calf</text>
-              </g>
-              <g class="bzone" id="zone-r-calf-back" data-zone="Right Calf (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M213 158.5 C216.5 165.5 216.5 179 213 186 C211 190 204 191 201 186 C198.5 179 199.5 165.5 202.5 158.5 C204.5 156 211 156 213 158.5Z"/>
-                <ellipse class="ring rf" cx="207" cy="173" rx="7" ry="11"/>
-                <ellipse class="ring ra" cx="207" cy="173" rx="7" ry="11"/>
-                <text class="bzl" x="207" y="173">R.Calf</text>
-              </g>
-              <g class="bzone" id="zone-l-ankle-back" data-zone="Left Ankle (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M174 188.5 C172 191.5 172 197 174.5 199.5 C177 202 183 202 185.5 199.5 C187.5 197 187.5 191.5 185.5 188.5 C183.5 186.5 176 186.5 174 188.5Z"/>
-                <ellipse class="ring rf" cx="179.5" cy="194" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="179.5" cy="194" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="179.5" y="194">L.Ankle</text>
-              </g>
-              <g class="bzone" id="zone-r-ankle-back" data-zone="Right Ankle (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M212 188.5 C214 191.5 214 197 211.5 199.5 C209 202 203 202 200.5 199.5 C198.5 197 198.5 191.5 200.5 188.5 C202.5 186.5 210 186.5 212 188.5Z"/>
-                <ellipse class="ring rf" cx="206.5" cy="194" rx="6.5" ry="5.5"/>
-                <ellipse class="ring ra" cx="206.5" cy="194" rx="6.5" ry="5.5"/>
-                <text class="bzl" x="206.5" y="194">R.Ankle</text>
-              </g>
-              <g class="bzone" id="zone-l-foot-back" data-zone="Left Foot (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M174 200.5 C171.5 204 170.5 210 173.5 213 C176 216 182.5 217 187.5 215 C192 213 193 208.5 191 204.5 C189 201.5 186 200.5 174 200.5Z"/>
-                <ellipse class="ring rf" cx="181.5" cy="208" rx="10" ry="5.5"/>
-                <ellipse class="ring ra" cx="181.5" cy="208" rx="10" ry="5.5"/>
-                <text class="bzl" x="181.5" y="208">L.Foot</text>
-              </g>
-              <g class="bzone" id="zone-r-foot-back" data-zone="Right Foot (back)" onclick="toggleZone(this)">
-                <path class="hit" d="M212 200.5 C214.5 204 215.5 210 212.5 213 C210 216 203.5 217 198.5 215 C194 213 193 208.5 195 204.5 C197 201.5 200 200.5 212 200.5Z"/>
-                <ellipse class="ring rf" cx="204.5" cy="208" rx="10" ry="5.5"/>
-                <ellipse class="ring ra" cx="204.5" cy="208" rx="10" ry="5.5"/>
-                <text class="bzl" x="204.5" y="208">R.Foot</text>
-              </g>
-
-            </svg>
+            <svg viewBox="0 0 512 470" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;">
+  <defs><style>
+.sk{fill:#eddcd1;stroke:#c8b0a0;stroke-width:1.1;stroke-linejoin:round;}
+.dt{fill:none;stroke:#c9ac9b;stroke-width:0.8;stroke-linecap:round;pointer-events:none;}
+.bzone{cursor:pointer;outline:none;}
+.bzone .hit{fill:transparent;stroke:none;}
+.bzone .fillz{fill:transparent;stroke:none;pointer-events:none;transition:fill .18s;}
+.bzone:hover .fillz{fill:rgba(150,120,100,0.13);}
+.bzone:focus-visible .fillz{fill:rgba(150,120,100,0.13);}
+.bzone.sf .fillz{fill:#b3b792;}
+.bzone.sa .fillz{fill:#e0a796;}
+.bzl{font-size:9px;font-family:"Open Sans",sans-serif;fill:#6f5443;
+     text-anchor:middle;pointer-events:none;opacity:0;transition:opacity .15s;}
+.bzone:hover .bzl,.bzone:focus-visible .bzl,.bzone.sf .bzl,.bzone.sa .bzl{opacity:1;}
+.vl{font-size:13px;font-family:"League Spartan",sans-serif;font-weight:700;
+    fill:#b79f8e;letter-spacing:.09em;text-anchor:middle;}
+</style></defs>
+  <text class="vl" x="128" y="16">FRONT</text>
+  <text class="vl" x="384" y="16">BACK</text>
+  <line x1="256" y1="8" x2="256" y2="462" stroke="#eadfd3" stroke-width="1.4"/>
+  <g transform="translate(28,26)"><path class="sk" d="M52.2 107.8L48.6 114.4L39.4 138.5L31.4 164.0L25.1 187.6L12.4 245.7L12.0 250.0L12.2 256.8L12.9 264.1L13.8 268.8L15.5 272.6L16.6 273.5L18.6 273.8L20.1 273.4L22.2 272.1L24.0 270.0L25.0 268.1L26.6 262.7L28.2 254.6L29.4 247.2L30.5 233.1L33.0 221.8L44.2 187.6L59.1 148.9L61.3 159.5L65.2 172.6L66.0 178.0L65.5 182.9L62.3 192.9L59.9 202.7L59.0 210.0L57.7 211.1L55.8 214.1L54.8 217.8L54.5 222.0L55.0 246.9L55.8 258.6L57.6 274.4L61.1 293.6L62.2 302.1L65.8 359.8L69.2 392.9L66.4 398.8L65.0 403.0L64.4 409.8L64.9 415.4L66.0 418.0L68.6 420.4L73.3 422.4L78.0 423.0L82.7 422.4L87.4 420.4L90.0 418.0L91.1 415.4L91.5 408.6L90.3 398.8L88.3 392.7L86.0 390.0L87.2 357.6L92.5 276.6L96.2 235.8L103.8 235.8L107.6 278.7L112.6 355.4L113.9 386.8L114.0 390.0L111.7 392.7L109.7 398.8L108.5 407.4L108.6 413.3L109.2 416.4L110.0 418.0L111.1 419.3L113.5 420.9L116.3 422.1L120.2 422.9L122.9 423.0L126.7 422.4L130.5 420.9L133.5 418.7L134.8 416.4L135.5 413.3L135.5 407.4L134.8 402.0L130.8 392.9L134.2 359.8L137.8 302.1L142.7 272.2L144.9 249.2L145.5 224.3L145.2 217.8L144.2 214.1L143.4 212.5L141.0 210.0L139.9 201.6L137.4 191.7L134.8 184.0L134.0 179.3L134.8 172.6L138.7 159.5L140.9 148.9L155.8 187.6L167.0 221.8L169.3 231.6L170.8 248.6L174.2 265.6L175.5 269.1L176.5 270.8L178.5 272.6L180.6 273.6L182.7 273.7L184.0 273.1L185.0 272.0L185.8 270.1L187.5 260.5L188.0 250.0L187.1 242.9L184.3 231.5L175.8 191.4L171.4 174.1L166.8 157.9L161.3 140.4L151.4 114.4L147.8 107.8L146.0 106.0L142.9 104.4L140.4 98.5L136.6 93.4L131.3 89.3L124.4 85.0L117.2 81.1L115.0 78.5L112.9 73.6L113.5 68.6L117.9 63.1L121.0 57.0L122.1 52.9L122.6 48.5L122.0 42.0L120.0 35.0L117.2 29.6L114.1 26.3L109.6 24.3L100.0 22.0L89.1 24.7L85.9 26.3L83.5 28.6L81.0 32.7L78.8 38.6L77.7 44.2L77.5 49.6L78.4 55.0L79.8 59.0L82.8 64.1L86.5 68.6L87.1 73.6L86.3 75.7L84.5 79.3L82.8 81.1L74.8 85.5L64.2 92.6L62.0 95.0L59.6 98.5L57.1 104.4L54.0 106.0L52.2 107.8Z"/><g class="dt"><path d="M78 118 Q100 113 122 118"/><path d="M76 132 C82 146 90 152 100 152 C110 152 118 146 124 132"/><circle cx="100" cy="196" r="1.6"/></g><g class="bzone" id="zone-front-head" data-zone="Head &amp; face" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Head &amp; face, front view"><path class="fillz" d="M100.0 22.0L89.1 24.7L85.0 27.0L82.8 29.6L81.0 32.7L78.2 40.9L77.4 48.5L77.9 52.9L78.7 56.0L81.5 62.1L86.5 68.6L87.1 73.6L85.5 77.6L84.0 80.0L116.0 80.0L114.5 77.6L112.9 73.6L113.1 71.8L113.5 68.6L116.5 65.1L119.1 61.1L120.6 58.0L121.9 53.9L122.5 46.3L122.0 42.0L120.8 37.4L117.8 30.6L115.8 27.8L114.1 26.3L110.9 24.7L105.8 23.3L100.0 22.0Z"/><path class="hit" d="M79.9 72.6L77.1 78.8L77.2 81.5L78.1 83.8L81.5 82.1L84.0 80.0L116.0 80.0L118.5 82.1L121.9 83.8L122.8 81.5L122.9 78.8L120.3 73.2L120.2 71.7L124.5 65.7L127.5 59.5L129.2 52.9L129.5 45.9L128.3 38.1L125.9 31.0L122.8 25.4L120.7 22.8L118.5 20.8L115.1 18.9L111.6 17.6L101.3 15.1L99.4 15.0L89.9 17.1L85.3 18.7L81.5 20.8L77.9 24.5L74.8 29.6L72.5 35.4L70.9 42.1L70.5 48.9L71.3 55.3L72.9 60.5L75.6 65.9L79.8 71.7L79.9 72.6Z"/><text class="bzl" x="100" y="50">Head</text></g><g class="bzone" id="zone-front-neck" data-zone="Neck &amp; shoulders" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Neck &amp; shoulders, front view"><path class="fillz" d="M82.8 81.1L75.6 85.0L68.7 89.3L65.0 91.9L62.7 94.2L59.1 99.5L57.1 104.4L54.0 106.0L52.2 107.8L50.7 110.1L48.6 114.4L44.0 126.0L156.0 126.0L150.8 112.9L147.8 107.8L146.0 106.0L142.9 104.4L140.4 98.5L136.6 93.4L133.2 90.6L125.2 85.5L118.5 82.1L116.0 80.0L84.0 80.0L82.8 81.1Z"/><path class="hit" d="M51.2 99.5L47.9 102.1L44.5 106.7L42.1 111.7L37.3 124.0L37.0 126.7L37.8 129.3L39.6 131.4L41.5 132.5L44.0 126.0L156.0 126.0L158.5 132.5L161.4 130.5L162.9 127.4L162.7 124.0L156.2 108.1L153.0 103.1L150.6 100.8L148.5 99.3L146.4 94.9L142.8 89.8L139.5 86.6L136.1 84.1L128.0 79.0L122.2 76.1L119.4 73.9L117.4 73.1L113.0 73.0L114.1 76.7L116.0 80.0L84.0 80.0L85.9 76.7L87.0 73.0L83.3 73.0L81.3 73.6L77.8 76.1L72.0 79.0L65.0 83.4L59.7 87.3L55.6 91.9L51.2 99.5Z"/><text class="bzl" x="100" y="106">Shoulders</text></g><g class="bzone" id="zone-front-arms" data-zone="Arms &amp; hands" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Arms &amp; hands, front view"><path class="fillz" d="M134.0 126.0L141.3 150.1L155.8 187.6L167.0 221.8L169.5 233.1L171.0 250.0L173.1 261.1L174.6 266.9L176.0 270.0L177.8 272.1L180.6 273.6L182.7 273.7L184.0 273.1L185.0 272.0L186.8 265.8L187.9 255.0L187.6 245.7L174.0 183.8L168.6 164.0L161.9 142.3L156.0 126.0L134.0 126.0ZM44.0 126.0L35.0 152.0L27.5 178.1L23.8 193.2L15.7 231.5L12.6 244.3L12.1 248.5L12.0 253.2L12.9 264.1L14.6 271.2L15.5 272.6L17.3 273.7L19.4 273.6L22.2 272.1L24.0 270.0L25.4 266.9L26.9 261.1L29.0 250.0L30.5 233.1L33.0 221.8L44.2 187.6L58.7 150.1L66.0 126.0L44.0 126.0Z"/><path class="hit" d="M138.1 161.5L149.8 191.8L160.7 225.3L162.6 234.0L164.1 251.2L166.2 262.7L168.5 270.5L169.9 273.4L171.8 276.0L176.1 279.3L178.4 280.3L181.1 280.8L183.7 280.6L186.3 279.8L188.7 278.3L191.0 275.6L192.4 272.5L193.3 269.0L194.3 263.2L194.9 255.3L194.9 248.2L194.3 243.1L182.2 187.9L175.9 164.1L169.8 144.1L164.6 128.7L161.8 122.1L159.3 119.8L156.7 119.0L153.3 119.0L156.0 126.0L143.9 126.0L142.4 141.0L138.1 161.5ZM38.2 122.1L32.8 136.2L27.7 151.9L20.2 178.2L15.7 197.3L5.3 246.2L5.0 251.7L5.3 259.3L6.3 266.9L7.6 272.5L9.0 275.6L11.3 278.3L13.7 279.8L17.0 280.7L21.6 280.3L25.8 278.1L29.2 274.8L31.5 270.5L33.8 262.7L35.9 251.2L37.4 234.0L39.3 225.3L50.2 191.8L61.9 161.5L57.9 142.6L56.1 126.0L44.0 126.0L46.7 119.0L42.6 119.1L40.1 120.2L38.2 122.1Z"/><text class="bzl" x="34" y="196">Arms</text></g><g class="bzone" id="zone-front-chest" data-zone="Chest &amp; tummy" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Chest &amp; tummy, front view"><path class="fillz" d="M56.1 126.0L57.2 137.7L58.5 145.8L61.3 159.5L65.2 172.6L66.0 179.3L65.2 184.0L62.6 191.7L60.1 201.6L59.0 210.0L56.6 212.5L55.8 214.1L54.8 217.8L54.5 224.3L55.0 238.0L96.0 238.0L96.2 235.8L103.8 235.8L104.0 238.0L145.0 238.0L145.5 224.3L145.2 217.8L144.2 214.1L143.4 212.5L141.0 210.0L139.9 201.6L137.4 191.7L134.8 184.0L134.0 179.3L134.8 172.6L138.7 159.5L141.5 145.8L142.8 137.7L143.9 126.0L56.1 126.0Z"/><path class="hit" d="M54.6 161.3L58.4 174.3L59.0 179.0L58.4 182.2L55.9 189.8L53.6 198.8L52.2 206.8L49.3 211.4L47.9 217.0L47.5 224.3L48.0 238.6L48.8 241.3L50.5 243.4L52.3 244.5L55.0 245.0L55.0 238.0L96.0 238.0L95.4 245.0L98.0 244.7L100.0 243.7L102.0 244.7L104.6 245.0L104.0 238.0L145.0 238.0L145.0 245.0L148.3 244.2L150.4 242.4L151.5 240.6L152.0 238.6L152.5 224.3L152.1 217.0L150.7 211.4L147.8 206.8L146.4 198.8L144.1 189.8L141.6 182.2L141.0 179.0L141.6 174.3L145.5 161.1L139.4 144.3L134.0 126.0L66.0 126.0L60.6 144.3L54.6 161.3Z"/><text class="bzl" x="100" y="176">Chest &amp; tummy</text></g><g class="bzone" id="zone-front-legs" data-zone="Legs &amp; knees" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Legs &amp; knees, front view"><path class="fillz" d="M104.0 238.0L107.5 276.6L113.4 370.7L114.0 390.0L112.2 391.9L110.4 396.0L132.3 396.0L130.8 392.9L134.2 359.8L137.4 306.4L138.6 295.7L142.1 276.6L143.2 267.8L144.7 251.5L145.0 238.0L104.0 238.0ZM55.0 238.0L55.4 253.9L57.0 270.0L61.4 295.7L62.6 306.4L65.8 359.8L69.2 392.9L67.7 396.0L89.6 396.0L87.8 391.9L86.0 390.0L86.6 370.7L92.5 276.6L96.0 238.0L55.0 238.0Z"/><path class="hit" d="M48.0 240.1L48.5 254.3L50.0 270.8L54.5 296.8L55.7 307.0L58.8 360.4L62.1 391.6L60.7 395.4L60.9 397.4L61.6 399.3L63.3 401.4L65.1 402.5L67.7 396.0L89.6 396.0L91.0 402.9L94.0 401.4L95.4 399.9L96.3 398.1L96.6 396.1L96.2 393.6L94.6 389.6L93.1 387.2L93.2 383.3L94.5 353.5L100.0 270.3L105.5 353.5L106.8 383.3L106.9 387.2L105.4 389.6L103.8 393.6L103.4 396.1L103.7 398.1L104.6 399.9L106.0 401.4L109.0 402.9L110.4 396.0L132.3 396.0L134.9 402.5L135.6 402.2L138.1 399.9L139.2 396.7L139.0 394.0L137.9 391.6L141.2 360.4L144.3 307.0L145.5 296.8L149.7 273.2L151.5 254.4L152.0 240.0L151.8 236.5L151.1 234.6L148.8 232.1L147.0 231.3L145.2 231.0L145.0 238.0L104.0 238.0L103.8 235.8L96.2 235.8L96.0 238.0L55.0 238.0L54.8 231.0L54.3 231.0L51.2 232.1L49.2 234.0L48.2 236.5L48.0 240.1Z"/><text class="bzl" x="100" y="300">Legs</text></g><g class="bzone" id="zone-front-feet" data-zone="Feet" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Feet, front view"><path class="fillz" d="M110.4 396.0L108.9 404.0L108.4 411.0L109.2 416.4L111.1 419.3L113.5 420.9L116.3 422.1L122.0 423.0L127.7 422.1L130.5 420.9L132.9 419.3L134.0 418.0L135.1 415.4L135.6 408.6L134.8 402.0L132.3 396.0L110.4 396.0ZM67.7 396.0L65.2 402.0L64.4 408.6L64.7 414.4L65.6 417.2L66.5 418.7L68.6 420.4L71.3 421.8L74.3 422.6L78.0 423.0L83.7 422.1L86.5 420.9L88.9 419.3L90.8 416.4L91.6 411.0L91.1 404.0L89.6 396.0L67.7 396.0Z"/><path class="hit" d="M103.4 394.9L101.7 405.6L101.7 414.3L102.2 417.4L103.4 420.6L104.9 422.9L107.4 425.3L110.4 427.2L114.4 428.8L119.3 429.8L123.5 430.0L128.3 429.2L132.7 427.7L136.1 425.7L139.1 422.9L140.9 419.9L142.1 415.9L142.6 411.4L142.5 406.8L141.9 401.9L141.0 398.5L138.5 392.8L136.8 390.6L134.3 389.3L131.1 389.0L130.8 393.2L132.3 396.0L110.4 396.0L112.2 391.9L114.0 390.0L114.0 389.0L109.7 389.0L107.7 389.5L105.4 391.1L104.2 392.8L103.4 394.9ZM62.3 391.6L59.3 397.5L58.2 401.5L57.5 406.8L57.4 411.4L57.8 415.4L58.7 419.0L60.4 422.2L62.7 424.7L66.0 427.0L70.0 428.7L74.3 429.7L79.1 430.0L83.3 429.4L88.3 427.9L92.1 425.7L94.5 423.6L96.1 421.4L97.5 418.3L98.3 414.3L98.6 409.6L98.1 403.2L96.9 396.0L95.8 392.8L94.1 390.6L91.0 389.1L86.0 389.0L86.0 390.0L87.8 391.9L89.6 396.0L67.7 396.0L69.2 393.2L68.9 389.0L66.3 389.1L64.4 389.8L62.3 391.6Z"/><text class="bzl" x="100" y="412">Feet</text></g></g>
+  <g transform="translate(284,26)"><path class="sk" d="M52.2 107.8L48.6 114.4L39.4 138.5L31.4 164.0L25.1 187.6L12.4 245.7L12.0 250.0L12.2 256.8L12.9 264.1L13.8 268.8L15.5 272.6L16.6 273.5L18.6 273.8L20.1 273.4L22.2 272.1L24.0 270.0L25.0 268.1L26.6 262.7L28.2 254.6L29.4 247.2L30.5 233.1L33.0 221.8L44.2 187.6L59.1 148.9L61.3 159.5L65.2 172.6L66.0 178.0L65.5 182.9L62.3 192.9L59.9 202.7L59.0 210.0L57.7 211.1L55.8 214.1L54.8 217.8L54.5 222.0L55.0 246.9L55.8 258.6L57.6 274.4L61.1 293.6L62.2 302.1L65.8 359.8L69.2 392.9L66.4 398.8L65.0 403.0L64.4 409.8L64.9 415.4L66.0 418.0L68.6 420.4L73.3 422.4L78.0 423.0L82.7 422.4L87.4 420.4L90.0 418.0L91.1 415.4L91.5 408.6L90.3 398.8L88.3 392.7L86.0 390.0L87.2 357.6L92.5 276.6L96.2 235.8L103.8 235.8L107.6 278.7L112.6 355.4L113.9 386.8L114.0 390.0L111.7 392.7L109.7 398.8L108.5 407.4L108.6 413.3L109.2 416.4L110.0 418.0L111.1 419.3L113.5 420.9L116.3 422.1L120.2 422.9L122.9 423.0L126.7 422.4L130.5 420.9L133.5 418.7L134.8 416.4L135.5 413.3L135.5 407.4L134.8 402.0L130.8 392.9L134.2 359.8L137.8 302.1L142.7 272.2L144.9 249.2L145.5 224.3L145.2 217.8L144.2 214.1L143.4 212.5L141.0 210.0L139.9 201.6L137.4 191.7L134.8 184.0L134.0 179.3L134.8 172.6L138.7 159.5L140.9 148.9L155.8 187.6L167.0 221.8L169.3 231.6L170.8 248.6L174.2 265.6L175.5 269.1L176.5 270.8L178.5 272.6L180.6 273.6L182.7 273.7L184.0 273.1L185.0 272.0L185.8 270.1L187.5 260.5L188.0 250.0L187.1 242.9L184.3 231.5L175.8 191.4L171.4 174.1L166.8 157.9L161.3 140.4L151.4 114.4L147.8 107.8L146.0 106.0L142.9 104.4L140.4 98.5L136.6 93.4L131.3 89.3L124.4 85.0L117.2 81.1L115.0 78.5L112.9 73.6L113.5 68.6L117.9 63.1L121.0 57.0L122.1 52.9L122.6 48.5L122.0 42.0L120.0 35.0L117.2 29.6L114.1 26.3L109.6 24.3L100.0 22.0L89.1 24.7L85.9 26.3L83.5 28.6L81.0 32.7L78.8 38.6L77.7 44.2L77.5 49.6L78.4 55.0L79.8 59.0L82.8 64.1L86.5 68.6L87.1 73.6L86.3 75.7L84.5 79.3L82.8 81.1L74.8 85.5L64.2 92.6L62.0 95.0L59.6 98.5L57.1 104.4L54.0 106.0L52.2 107.8Z"/><g class="dt"><path d="M100 108 L100 218"/><path d="M84 128 C82 136 82 146 84 154"/><path d="M116 128 C118 136 118 146 116 154"/><path d="M92 224 Q100 228 108 224"/></g><g class="bzone" id="zone-back-head" data-zone="Head &amp; face" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Head &amp; face, back view"><path class="fillz" d="M100.0 22.0L89.1 24.7L85.0 27.0L82.8 29.6L81.0 32.7L78.2 40.9L77.4 48.5L77.9 52.9L78.7 56.0L81.5 62.1L86.5 68.6L87.1 73.6L85.5 77.6L84.0 80.0L116.0 80.0L114.5 77.6L112.9 73.6L113.1 71.8L113.5 68.6L116.5 65.1L119.1 61.1L120.6 58.0L121.9 53.9L122.5 46.3L122.0 42.0L120.8 37.4L117.8 30.6L115.8 27.8L114.1 26.3L110.9 24.7L105.8 23.3L100.0 22.0Z"/><path class="hit" d="M79.9 72.6L77.1 78.8L77.2 81.5L78.1 83.8L81.5 82.1L84.0 80.0L116.0 80.0L118.5 82.1L121.9 83.8L122.8 81.5L122.9 78.8L120.3 73.2L120.2 71.7L124.5 65.7L127.5 59.5L129.2 52.9L129.5 45.9L128.3 38.1L125.9 31.0L122.8 25.4L120.7 22.8L118.5 20.8L115.1 18.9L111.6 17.6L101.3 15.1L99.4 15.0L89.9 17.1L85.3 18.7L81.5 20.8L77.9 24.5L74.8 29.6L72.5 35.4L70.9 42.1L70.5 48.9L71.3 55.3L72.9 60.5L75.6 65.9L79.8 71.7L79.9 72.6Z"/><text class="bzl" x="100" y="50">Head</text></g><g class="bzone" id="zone-back-neck" data-zone="Neck &amp; shoulders" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Neck &amp; shoulders, back view"><path class="fillz" d="M82.8 81.1L75.6 85.0L68.7 89.3L65.0 91.9L62.7 94.2L59.1 99.5L57.1 104.4L54.0 106.0L52.2 107.8L50.7 110.1L48.6 114.4L44.0 126.0L156.0 126.0L150.8 112.9L147.8 107.8L146.0 106.0L142.9 104.4L140.4 98.5L136.6 93.4L133.2 90.6L125.2 85.5L118.5 82.1L116.0 80.0L84.0 80.0L82.8 81.1Z"/><path class="hit" d="M51.2 99.5L47.9 102.1L44.5 106.7L42.1 111.7L37.3 124.0L37.0 126.7L37.8 129.3L39.6 131.4L41.5 132.5L44.0 126.0L156.0 126.0L158.5 132.5L161.4 130.5L162.9 127.4L162.7 124.0L156.2 108.1L153.0 103.1L150.6 100.8L148.5 99.3L146.4 94.9L142.8 89.8L139.5 86.6L136.1 84.1L128.0 79.0L122.2 76.1L119.4 73.9L117.4 73.1L113.0 73.0L114.1 76.7L116.0 80.0L84.0 80.0L85.9 76.7L87.0 73.0L83.3 73.0L81.3 73.6L77.8 76.1L72.0 79.0L65.0 83.4L59.7 87.3L55.6 91.9L51.2 99.5Z"/><text class="bzl" x="100" y="106">Shoulders</text></g><g class="bzone" id="zone-back-arms" data-zone="Arms &amp; hands" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Arms &amp; hands, back view"><path class="fillz" d="M134.0 126.0L141.3 150.1L155.8 187.6L167.0 221.8L169.5 233.1L171.0 250.0L173.1 261.1L174.6 266.9L176.0 270.0L177.8 272.1L180.6 273.6L182.7 273.7L184.0 273.1L185.0 272.0L186.8 265.8L187.9 255.0L187.6 245.7L174.0 183.8L168.6 164.0L161.9 142.3L156.0 126.0L134.0 126.0ZM44.0 126.0L35.0 152.0L27.5 178.1L23.8 193.2L15.7 231.5L12.6 244.3L12.1 248.5L12.0 253.2L12.9 264.1L14.6 271.2L15.5 272.6L17.3 273.7L19.4 273.6L22.2 272.1L24.0 270.0L25.4 266.9L26.9 261.1L29.0 250.0L30.5 233.1L33.0 221.8L44.2 187.6L58.7 150.1L66.0 126.0L44.0 126.0Z"/><path class="hit" d="M138.1 161.5L149.8 191.8L160.7 225.3L162.6 234.0L164.1 251.2L166.2 262.7L168.5 270.5L169.9 273.4L171.8 276.0L176.1 279.3L178.4 280.3L181.1 280.8L183.7 280.6L186.3 279.8L188.7 278.3L191.0 275.6L192.4 272.5L193.3 269.0L194.3 263.2L194.9 255.3L194.9 248.2L194.3 243.1L182.2 187.9L175.9 164.1L169.8 144.1L164.6 128.7L161.8 122.1L159.3 119.8L156.7 119.0L153.3 119.0L156.0 126.0L143.9 126.0L142.4 141.0L138.1 161.5ZM38.2 122.1L32.8 136.2L27.7 151.9L20.2 178.2L15.7 197.3L5.3 246.2L5.0 251.7L5.3 259.3L6.3 266.9L7.6 272.5L9.0 275.6L11.3 278.3L13.7 279.8L17.0 280.7L21.6 280.3L25.8 278.1L29.2 274.8L31.5 270.5L33.8 262.7L35.9 251.2L37.4 234.0L39.3 225.3L50.2 191.8L61.9 161.5L57.9 142.6L56.1 126.0L44.0 126.0L46.7 119.0L42.6 119.1L40.1 120.2L38.2 122.1Z"/><text class="bzl" x="34" y="196">Arms</text></g><g class="bzone" id="zone-back-uback" data-zone="Upper back" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Upper back, back view"><path class="fillz" d="M56.1 126.0L57.2 137.7L58.8 147.4L61.3 159.5L65.7 175.4L65.9 180.5L64.6 186.0L135.4 186.0L134.1 180.5L134.3 175.4L138.7 159.5L141.2 147.4L142.8 137.7L143.9 126.0L56.1 126.0Z"/><path class="hit" d="M54.6 161.3L58.1 173.1L58.9 177.4L58.8 180.5L57.6 185.2L57.9 187.9L59.6 190.9L62.3 192.6L64.6 186.0L135.4 186.0L137.7 192.6L140.4 190.9L142.1 187.9L142.4 185.2L141.2 180.5L141.1 177.4L141.9 173.1L145.5 161.1L139.4 144.3L134.0 126.0L66.0 126.0L60.6 144.3L54.6 161.3Z"/><text class="bzl" x="100" y="158">Upper back</text></g><g class="bzone" id="zone-back-lback" data-zone="Lower back" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Lower back, back view"><path class="fillz" d="M64.5 186.2L62.3 192.9L60.1 201.6L59.0 210.0L57.7 211.1L55.8 214.0L144.2 214.0L142.3 211.1L141.0 210.0L139.9 201.6L137.7 192.9L135.4 186.0L64.5 186.2Z"/><path class="hit" d="M52.1 206.8L49.3 211.4L48.8 213.4L49.0 215.5L49.7 217.4L50.9 219.0L52.6 220.2L54.5 220.9L54.8 217.8L55.8 214.0L144.2 214.0L145.2 217.8L145.5 220.9L147.4 220.2L149.1 219.0L150.3 217.4L151.1 214.8L150.7 211.4L147.8 206.8L147.0 201.2L144.5 191.2L141.8 183.2L140.8 181.5L139.3 180.1L136.1 179.0L134.0 179.0L134.3 181.7L135.4 186.0L64.6 186.0L65.7 181.7L66.0 179.0L62.6 179.3L59.7 181.0L57.9 183.8L55.5 191.2L53.0 201.2L52.1 206.8Z"/><text class="bzl" x="100" y="202">Lower back</text></g><g class="bzone" id="zone-back-hips" data-zone="Hips &amp; glutes" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Hips &amp; glutes, back view"><path class="fillz" d="M55.8 214.1L54.8 217.8L54.5 222.0L55.0 238.0L96.0 238.0L96.2 235.8L103.8 235.8L104.0 238.0L145.0 238.0L145.5 222.0L145.2 217.8L144.2 214.0L55.8 214.1Z"/><path class="hit" d="M49.3 211.4L48.3 214.5L47.6 219.5L48.0 238.6L48.5 240.6L49.6 242.4L51.1 243.8L53.0 244.7L55.0 245.0L55.0 238.0L96.0 238.0L95.4 245.0L98.0 244.7L100.0 243.7L102.0 244.7L104.6 245.0L104.0 238.0L145.0 238.0L145.0 245.0L147.7 244.5L149.5 243.4L150.8 241.9L151.7 240.0L152.5 224.3L152.0 216.4L151.4 213.7L150.1 210.2L148.1 208.2L146.2 207.3L140.8 207.0L141.0 210.0L142.3 211.1L144.2 214.0L55.8 214.0L57.7 211.1L59.0 210.0L59.2 207.0L55.1 207.0L53.1 207.6L50.8 209.1L49.3 211.4Z"/><text class="bzl" x="100" y="228">Hips</text></g><g class="bzone" id="zone-back-legs" data-zone="Legs &amp; knees" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Legs &amp; knees, back view"><path class="fillz" d="M104.0 238.0L107.5 276.6L113.4 370.7L114.0 390.0L112.2 391.9L110.4 396.0L132.3 396.0L130.8 392.9L134.2 359.8L137.4 306.4L138.6 295.7L142.1 276.6L143.2 267.8L144.7 251.5L145.0 238.0L104.0 238.0ZM55.0 238.0L55.4 253.9L57.0 270.0L61.4 295.7L62.6 306.4L65.8 359.8L69.2 392.9L67.7 396.0L89.6 396.0L87.8 391.9L86.0 390.0L86.6 370.7L92.5 276.6L96.0 238.0L55.0 238.0Z"/><path class="hit" d="M48.0 240.1L48.5 254.3L50.0 270.8L54.5 296.8L55.7 307.0L58.8 360.4L62.1 391.6L60.7 395.4L60.9 397.4L61.6 399.3L63.3 401.4L65.1 402.5L67.7 396.0L89.6 396.0L91.0 402.9L94.0 401.4L95.4 399.9L96.3 398.1L96.6 396.1L96.2 393.6L94.6 389.6L93.1 387.2L93.2 383.3L94.5 353.5L100.0 270.3L105.5 353.5L106.8 383.3L106.9 387.2L105.4 389.6L103.8 393.6L103.4 396.1L103.7 398.1L104.6 399.9L106.0 401.4L109.0 402.9L110.4 396.0L132.3 396.0L134.9 402.5L135.6 402.2L138.1 399.9L139.2 396.7L139.0 394.0L137.9 391.6L141.2 360.4L144.3 307.0L145.5 296.8L149.7 273.2L151.5 254.4L152.0 240.0L151.8 236.5L151.1 234.6L148.8 232.1L147.0 231.3L145.2 231.0L145.0 238.0L104.0 238.0L103.8 235.8L96.2 235.8L96.0 238.0L55.0 238.0L54.8 231.0L54.3 231.0L51.2 232.1L49.2 234.0L48.2 236.5L48.0 240.1Z"/><text class="bzl" x="100" y="300">Legs</text></g><g class="bzone" id="zone-back-feet" data-zone="Feet" onclick="toggleZone(this)" tabindex="0" role="button" aria-label="Feet, back view"><path class="fillz" d="M110.4 396.0L108.9 404.0L108.4 411.0L109.2 416.4L111.1 419.3L113.5 420.9L116.3 422.1L122.0 423.0L127.7 422.1L130.5 420.9L132.9 419.3L134.0 418.0L135.1 415.4L135.6 408.6L134.8 402.0L132.3 396.0L110.4 396.0ZM67.7 396.0L65.2 402.0L64.4 408.6L64.7 414.4L65.6 417.2L66.5 418.7L68.6 420.4L71.3 421.8L74.3 422.6L78.0 423.0L83.7 422.1L86.5 420.9L88.9 419.3L90.8 416.4L91.6 411.0L91.1 404.0L89.6 396.0L67.7 396.0Z"/><path class="hit" d="M103.4 394.9L101.7 405.6L101.7 414.3L102.2 417.4L103.4 420.6L104.9 422.9L107.4 425.3L110.4 427.2L114.4 428.8L119.3 429.8L123.5 430.0L128.3 429.2L132.7 427.7L136.1 425.7L139.1 422.9L140.9 419.9L142.1 415.9L142.6 411.4L142.5 406.8L141.9 401.9L141.0 398.5L138.5 392.8L136.8 390.6L134.3 389.3L131.1 389.0L130.8 393.2L132.3 396.0L110.4 396.0L112.2 391.9L114.0 390.0L114.0 389.0L109.7 389.0L107.7 389.5L105.4 391.1L104.2 392.8L103.4 394.9ZM62.3 391.6L59.3 397.5L58.2 401.5L57.5 406.8L57.4 411.4L57.8 415.4L58.7 419.0L60.4 422.2L62.7 424.7L66.0 427.0L70.0 428.7L74.3 429.7L79.1 430.0L83.3 429.4L88.3 427.9L92.1 425.7L94.5 423.6L96.1 421.4L97.5 418.3L98.3 414.3L98.6 409.6L98.1 403.2L96.9 396.0L95.8 392.8L94.1 390.6L91.0 389.1L86.0 389.0L86.0 390.0L87.8 391.9L89.6 396.0L67.7 396.0L69.2 393.2L68.9 389.0L66.3 389.1L64.4 389.8L62.3 391.6Z"/><text class="bzl" x="100" y="412">Feet</text></g></g>
+</svg>
           </div>
 
           <!-- Summary chips -->
@@ -1685,54 +1220,56 @@
   }
 
   function toggleZone(el) {
-    const id = el.id;
-    const current = zoneState[id] || null;
-
-    if (current === currentMode) {
-      // Tap same mode again → deselect
-      zoneState[id] = null;
-      el.classList.remove('sf', 'sa');
-    } else {
-      // Set to current mode (removes any conflicting state)
-      zoneState[id] = currentMode;
-      el.classList.remove('sf', 'sa');
-      el.classList.add(currentMode === 'focus' ? 'sf' : 'sa');
-    }
+    const name = el.dataset.zone;
+    const next = (zoneState[name] || null) === currentMode ? null : currentMode;
+    if (next) { zoneState[name] = next; } else { delete zoneState[name]; }
+    // the same zone appears on both the front and the back figure - keep them in step
+    document.querySelectorAll('.bzone').forEach(z => {
+      if (z.dataset.zone !== name) return;
+      z.classList.remove('sf', 'sa');
+      if (next) z.classList.add(next === 'focus' ? 'sf' : 'sa');
+    });
     updateChips();
     updateHiddenInputs();
   }
 
-  function updateChips() {
-    const focusChips = document.getElementById('focusChips');
-    const avoidChips = document.getElementById('avoidChips');
-    const focusZones = [], avoidZones = [];
-
+  function selectedZones(mode) {
+    const seen = new Set(), out = [];
     document.querySelectorAll('.bzone').forEach(el => {
-      const state = zoneState[el.id];
-      const name = el.dataset.zone;
-      if (state === 'focus') focusZones.push(name);
-      if (state === 'avoid') avoidZones.push(name);
+      const n = el.dataset.zone;
+      if (seen.has(n)) return;
+      seen.add(n);
+      if (zoneState[n] === mode) out.push(n);
     });
+    return out;
+  }
 
-    focusChips.innerHTML = focusZones.length
+  function updateChips() {
+    const focusZones = selectedZones('focus');
+    const avoidZones = selectedZones('avoid');
+
+    document.getElementById('focusChips').innerHTML = focusZones.length
       ? focusZones.map(n => `<span class="chip chip-focus">${n}</span>`).join('')
       : '<span class="chip chip-empty">Tap zones on the body</span>';
 
-    avoidChips.innerHTML = avoidZones.length
+    document.getElementById('avoidChips').innerHTML = avoidZones.length
       ? avoidZones.map(n => `<span class="chip chip-avoid">${n}</span>`).join('')
       : '<span class="chip chip-empty">None selected</span>';
   }
 
   function updateHiddenInputs() {
-    const focus = [], avoid = [];
-    document.querySelectorAll('.bzone').forEach(el => {
-      const s = zoneState[el.id];
-      if (s === 'focus') focus.push(el.dataset.zone);
-      if (s === 'avoid') avoid.push(el.dataset.zone);
-    });
-    document.getElementById('focusAreasData').value = focus.join(', ') || 'None specified';
-    document.getElementById('avoidAreasData').value = avoid.join(', ') || 'None';
+    document.getElementById('focusAreasData').value =
+      selectedZones('focus').join(', ') || 'None specified';
+    document.getElementById('avoidAreasData').value =
+      selectedZones('avoid').join(', ') || 'None';
   }
+
+  // keyboard: Enter or Space toggles the focused zone
+  document.addEventListener('keydown', function(e) {
+    const z = e.target.closest && e.target.closest('.bzone');
+    if (!z) return;
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleZone(z); }
+  });
 
   //  Returning client 
   document.getElementById('clientPhone').addEventListener('blur', function() {
@@ -1862,8 +1399,8 @@ showSuccess();
     // Reset body map
     document.querySelectorAll('.bzone').forEach(el => {
       el.classList.remove('sf','sa');
-      delete zoneState[el.id];
     });
+    Object.keys(zoneState).forEach(k => delete zoneState[k]);
     updateChips();
     updateHiddenInputs();
     setMode('focus');
