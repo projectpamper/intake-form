@@ -255,7 +255,7 @@
   /* Pressure selector */
   .pressure-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
   }
 
@@ -523,6 +523,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
     gap: 5px;
     padding: 12px 6px;
     border-radius: 10px;
@@ -898,27 +900,19 @@
       <div class="section-title">Pressure Preference</div>
       <div class="pressure-grid">
         <div class="pressure-option">
-          <input type="radio" name="pressure" id="p-light" value="Light">
-          <label for="p-light">Light</label>
-        </div>
-        <div class="pressure-option">
           <input type="radio" name="pressure" id="p-relax" value="Relaxing">
-          <label for="p-relax">Relaxing</label>
+          <label for="p-relax">Relaxing<br><small style="color:var(--stone);font-size:10px;">Light &amp; soothing</small></label>
         </div>
         <div class="pressure-option">
           <input type="radio" name="pressure" id="p-medium" value="Medium">
-          <label for="p-medium">Medium</label>
+          <label for="p-medium">Medium<br><small style="color:var(--stone);font-size:10px;">Balanced</small></label>
         </div>
         <div class="pressure-option">
           <input type="radio" name="pressure" id="p-firm" value="Firm">
-          <label for="p-firm">Firm</label>
-        </div>
-        <div class="pressure-option">
-          <input type="radio" name="pressure" id="p-strong" value="Strong">
-          <label for="p-strong">Strong*</label>
+          <label for="p-firm">Firm<br><small style="color:var(--stone);font-size:10px;">Deep &amp; intensive</small></label>
         </div>
       </div>
-      <p style="font-size:11px;color:var(--stone);margin-top:10px;">* Strong pressure may cause temporary muscle soreness</p>
+      <p style="font-size:11px;color:var(--stone);margin-top:10px;">You can ask your therapist to adjust the pressure at any point during your treatment.</p>
     </div>
 
     <!-- 4 & 5. Interactive body map — Focus & Avoid -->
@@ -1024,20 +1018,20 @@
       <div class="section-title">Post-Massage Drink</div>
       <div class="drinks-grid">
         <div class="drink-option">
-          <input type="radio" name="drink" id="d-water" value="Water">
-          <label for="d-water">Water</label>
+          <input type="radio" name="drink" id="d-water" value="Chilled Water">
+          <label for="d-water">Chilled Water</label>
         </div>
         <div class="drink-option">
-          <input type="radio" name="drink" id="d-green-tea" value="Green Tea">
-          <label for="d-green-tea">Green Tea</label>
+          <input type="radio" name="drink" id="d-green-tea" value="Hot Green Tea">
+          <label for="d-green-tea">Hot Green Tea<br><small style="color:var(--stone);font-size:10px;">Plain</small></label>
         </div>
         <div class="drink-option">
-          <input type="radio" name="drink" id="d-ginger-tea" value="Ginger Tea">
-          <label for="d-ginger-tea">Ginger Tea</label>
+          <input type="radio" name="drink" id="d-ginger-tea" value="Hot Spiced Ginger &amp; Honey Tea">
+          <label for="d-ginger-tea">Hot Spiced Ginger &amp; Honey Tea</label>
         </div>
         <div class="drink-option">
-          <input type="radio" name="drink" id="d-coffee" value="Coffee">
-          <label for="d-coffee">Coffee</label>
+          <input type="radio" name="drink" id="d-coffee" value="Freshly Brewed Coffee">
+          <label for="d-coffee">Freshly Brewed Coffee<br><small style="color:var(--stone);font-size:10px;">Milk / sugar</small></label>
         </div>
       </div>
 
@@ -1205,7 +1199,7 @@
   document.querySelectorAll('input[name="drink"]').forEach(el => {
     el.addEventListener('change', function() {
       document.getElementById('coffeeOptions').style.display =
-        this.value === 'Coffee' ? 'block' : 'none';
+        this.value === 'Freshly Brewed Coffee' ? 'block' : 'none';
     });
   });
   let currentMode = 'focus'; // 'focus' | 'avoid'
@@ -1314,11 +1308,11 @@
       drink:         (() => {
         const base = document.querySelector('input[name="drink"]:checked')?.value;
         if (!base) return 'Not specified';
-        if (base !== 'Coffee') return base;
+        if (base !== 'Freshly Brewed Coffee') return base;
         const milk  = document.querySelector('input[name="coffee-milk"]:checked')?.value  || '';
         const sugar = document.querySelector('input[name="coffee-sugar"]:checked')?.value || '';
         const detail = [milk, sugar].filter(Boolean).join(', ');
-        return detail ? `Coffee (${detail})` : 'Coffee';
+        return detail ? `Freshly Brewed Coffee (${detail})` : 'Freshly Brewed Coffee';
       })(),
       medical:       checked('#formContent input[id^="m-"]').join(', ') || 'None declared',
       injuries:      document.getElementById('injuries').value || 'None',
